@@ -7,7 +7,7 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow() { delete ui; }
+    ~MainWindow() override { delete ui; }
 
 private:
     Ui::MainWindow *ui;
