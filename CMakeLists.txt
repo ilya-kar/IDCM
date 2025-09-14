@@ -12,9 +12,9 @@ find_package(Qt6 COMPONENTS REQUIRED
         Widgets
 )
 
-add_subdirectory(src/windows/main)
+add_subdirectory(src/MainWindow)
 
-add_executable(myapp src/main.cpp)
+add_executable(myapp src/main.cpp resources/resources.qrc)
 target_link_libraries(myapp PRIVATE MainWindow)
 
 if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
