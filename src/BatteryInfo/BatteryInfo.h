@@ -2,7 +2,6 @@
 #define IDCM_BATTERYINFO_H
 
 #include <QDialog>
-#include <windows.h>
 
 namespace Ui { class BatteryInfo; }
 
@@ -13,16 +12,22 @@ public:
     explicit BatteryInfo(QWidget *parent = nullptr);
     ~BatteryInfo() override;
 
+protected:
+    void showEvent(QShowEvent *event) override;
+    void hideEvent(QHideEvent *event) override;
+
 public slots:
     void updateBatteryInfo();
 
 private:
-    void updateACLineStatus(const BYTE status) const;
-    void updatePowerState(const BYTE state) const;
-    void updateLifePercent(const BYTE percent) const;
-    void updateLifeTime(const DWORD time) const;
+    static QString getCurPowerMode();
+    static QString getBatteryType();
+    void goSleep();
+    void goHibernate();
+    void reset() const;
+    static const QString INITIAL_LINE;
     Ui::BatteryInfo *ui;
-    SYSTEM_POWER_STATUS sps;
+    QTimer *timer;
 };
 
 #endif //IDCM_BATTERYINFO_H

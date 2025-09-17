@@ -86,7 +86,7 @@
       <enum>QFrame::Shape::StyledPanel</enum>
      </property>
      <property name="text">
-      <string>100</string>
+      <string>Чтение...</string>
      </property>
     </widget>
    </item>
@@ -102,7 +102,7 @@
       <enum>QFrame::Shape::StyledPanel</enum>
      </property>
      <property name="text">
-      <string>hh:mm:ss</string>
+      <string>Чтение...</string>
      </property>
     </widget>
    </item>
@@ -160,7 +160,7 @@
       <enum>QFrame::Shadow::Plain</enum>
      </property>
      <property name="text">
-      <string>От сети</string>
+      <string>Чтение...</string>
      </property>
     </widget>
    </item>
@@ -225,7 +225,7 @@
       <enum>QFrame::Shape::StyledPanel</enum>
      </property>
      <property name="text">
-      <string>Производительность</string>
+      <string>Чтение...</string>
      </property>
     </widget>
    </item>
@@ -241,7 +241,7 @@
       <enum>QFrame::Shape::StyledPanel</enum>
      </property>
      <property name="text">
-      <string>Li-on</string>
+      <string>Чтение...</string>
      </property>
     </widget>
    </item>
@@ -267,12 +267,12 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Режим энергосбережения</string>
+      <string>Схема энергосбережения</string>
      </property>
     </widget>
    </item>
    <item row="14" column="1">
-    <widget class="QPushButton" name="hibernatationButton">
+    <widget class="QPushButton" name="hibernatateButton">
      <property name="text">
       <string>Гибернация</string>
      </property>
@@ -322,7 +322,7 @@
       <number>1</number>
      </property>
      <property name="text">
-      <string>Зарядка</string>
+      <string>Чтение...</string>
      </property>
     </widget>
    </item>

@@ -16,7 +16,7 @@ MainWindow::~MainWindow() {
 void MainWindow::chooseWindow() const {
     switch (ui->labSelect->currentIndex()) {
         case 0:
-            batteryInfo->exec();
+            batteryInfo->open();
             break;
         default:
             break;

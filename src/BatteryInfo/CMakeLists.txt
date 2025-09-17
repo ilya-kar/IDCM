@@ -10,6 +10,8 @@ target_link_libraries(BatteryInfo PUBLIC
         Qt::Gui
         Qt::Widgets
         kernel32
+        PowrProf
+        setupapi
 )
 
 target_include_directories(BatteryInfo PUBLIC

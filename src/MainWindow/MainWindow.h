@@ -3,9 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui {
-    class MainWindow;
-}
+namespace Ui { class MainWindow; }
 
 class BatteryInfo;
 
