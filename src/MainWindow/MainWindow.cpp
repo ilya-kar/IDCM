@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
     ui = new Ui::MainWindow;
     batteryInfo = new BatteryInfo(this);
     ui->setupUi(this);
-    connect(ui->startButton, &QPushButton::clicked, this, &MainWindow::chooseWindow);
+    connect(ui->pushButtonStart, &QPushButton::clicked, this, &MainWindow::chooseWindow);
 }
 
 MainWindow::~MainWindow() {
@@ -14,7 +14,7 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::chooseWindow() const {
-    switch (ui->labSelect->currentIndex()) {
+    switch (ui->comboBoxLabSelect->currentIndex()) {
         case 0:
             batteryInfo->open();
             break;

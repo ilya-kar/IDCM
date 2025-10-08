@@ -15,10 +15,10 @@ BatteryInfo::BatteryInfo(QWidget *parent) : QDialog(parent), ui(new Ui::BatteryI
     timer = new QTimer(this);
     timer->setInterval(1000);
     connect(timer, &QTimer::timeout, this, &BatteryInfo::updateBatteryInfo);
-    connect(ui->sleepButton, &QPushButton::clicked, this, [this] {
+    connect(ui->pushButtonSleep, &QPushButton::clicked, this, [this] {
         goSleep();
     });
-    connect(ui->hibernatateButton, &QPushButton::clicked, this, [this] {
+    connect(ui->pushButtonHibernate, &QPushButton::clicked, this, [this] {
         goHibernate();
     });
 }
@@ -30,36 +30,36 @@ BatteryInfo::~BatteryInfo() {
 void BatteryInfo::updateBatteryInfo() {
     SYSTEM_POWER_STATUS sps;
     if (!GetSystemPowerStatus(&sps)) {
-        ui->powerSource->setText("-");
-        ui->powerState->setText("-");
-        ui->powerMode->setText("-");
-        ui->powerCapacity->setText("-");
-        ui->powerType->setText("-");
-        ui->powerTime->setText("-");
-        QMessageBox::critical(this, "Ошибка", "Не удалось получить информацию о батареии");
+        ui->labelPowerSource->setText("-");
+        ui->labelPowerState->setText("-");
+        ui->labelPowerMode->setText("-");
+        ui->labelCapacity->setText("-");
+        ui->labelBatteryType->setText("-");
+        ui->labelRemainingTime->setText("-");
+        QMessageBox::critical(this, "Ошибка", "Не удалось получить информацию о батареи");
         timer->stop();
         return;
     }
 
     switch (sps.ACLineStatus) {
-        case 0: ui->powerSource->setText("От аккумулятора"); break;
-        case 1: ui->powerSource->setText("От сети"); break;
-        default: ui->powerSource->setText("Неизвестно");
+        case 0: ui->labelPowerSource->setText("От аккумулятора"); break;
+        case 1: ui->labelPowerSource->setText("От сети"); break;
+        default: ui->labelPowerSource->setText("Неизвестно"); break;
     }
 
-    if (sps.BatteryFlag == 255) ui->powerState->setText("Неизвестно");
-    else if (sps.BatteryFlag & 128)  ui->powerState->setText("-");
-    else if (sps.ACLineStatus == 1) ui->powerState->setText("Зарядка");
-    else ui->powerState->setText("Разрядка");
+    if (sps.BatteryFlag == 255) ui->labelPowerState->setText("Неизвестно");
+    else if (sps.BatteryFlag & 128)  ui->labelPowerState->setText("-");
+    else if (sps.ACLineStatus == 1) ui->labelPowerState->setText("Зарядка");
+    else ui->labelPowerState->setText("Разрядка");
 
     if (sps.BatteryLifePercent == 255) {
-        if (sps.BatteryFlag & 128) ui->powerCapacity->setText("-");
-        else ui->powerCapacity->setText("Неизвестно");
+        if (sps.BatteryFlag & 128) ui->labelCapacity->setText("-");
+        else ui->labelCapacity->setText("Неизвестно");
     }
-    else if (sps.BatteryLifePercent == 100) ui->powerCapacity->setText("Полностью заряжен");
-    else ui->powerCapacity->setText(QString::number(sps.BatteryLifePercent));
+    else if (sps.BatteryLifePercent == 100) ui->labelCapacity->setText("Полностью заряжен");
+    else ui->labelCapacity->setText(QString::number(sps.BatteryLifePercent));
 
-    if (sps.BatteryLifeTime == -1) ui->powerTime->setText("-");
+    if (sps.BatteryLifeTime == -1) ui->labelRemainingTime->setText("-");
     else {
         DWORD hours = sps.BatteryLifeTime / 3600;
         DWORD minutes = (sps.BatteryLifeTime / 60) % 60;
@@ -70,17 +70,17 @@ void BatteryInfo::updateBatteryInfo() {
             .arg(minutes, 2, 10, QChar('0'))
             .arg(seconds, 2, 10, QChar('0'));
 
-        ui->powerTime->setText(timeStr);
+        ui->labelRemainingTime->setText(timeStr);
     }
 
-    ui->powerMode->setText(getCurPowerMode());
+    ui->labelPowerMode->setText(getCurPowerMode());
 }
 
 void BatteryInfo::showEvent(QShowEvent *event) {
     QDialog::showEvent(event);
     timer->start();
     QTimer::singleShot(1000, this, [this] {
-        ui->powerType->setText(getBatteryType());
+        ui->labelBatteryType->setText(getBatteryType());
     });
 }
 
@@ -192,14 +192,15 @@ QString BatteryInfo::getBatteryType() {
 
     CloseHandle(hBattery);
     SetupDiDestroyDeviceInfoList(hdev);
+
     return result;
 }
 
 void BatteryInfo::reset() const {
-    ui->powerSource->setText(INITIAL_LINE);
-    ui->powerState->setText(INITIAL_LINE);
-    ui->powerMode->setText(INITIAL_LINE);
-    ui->powerCapacity->setText(INITIAL_LINE);
-    ui->powerType->setText(INITIAL_LINE);
-    ui->powerTime->setText(INITIAL_LINE);
+    ui->labelPowerSource->setText(INITIAL_LINE);
+    ui->labelPowerState->setText(INITIAL_LINE);
+    ui->labelPowerMode->setText(INITIAL_LINE);
+    ui->labelCapacity->setText(INITIAL_LINE);
+    ui->labelBatteryType->setText(INITIAL_LINE);
+    ui->labelRemainingTime->setText(INITIAL_LINE);
 }

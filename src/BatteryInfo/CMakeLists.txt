@@ -10,11 +10,10 @@ target_link_libraries(BatteryInfo PUBLIC
         Qt::Gui
         Qt::Widgets
         kernel32
-        PowrProf
+        powrprof
         setupapi
 )
 
 target_include_directories(BatteryInfo PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
-        ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}_autogen/include
 )

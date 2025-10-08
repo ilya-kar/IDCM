@@ -33,7 +33,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="7" column="0">
-    <widget class="QLabel" name="capacity">
+    <widget class="QLabel" name="labelCapacity_2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -46,7 +46,7 @@
     </widget>
    </item>
    <item row="0" column="0">
-    <widget class="QLabel" name="source">
+    <widget class="QLabel" name="labelPowerSource_2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -75,7 +75,7 @@
     </spacer>
    </item>
    <item row="7" column="1">
-    <widget class="QLabel" name="powerCapacity">
+    <widget class="QLabel" name="labelCapacity">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -91,7 +91,7 @@
     </widget>
    </item>
    <item row="11" column="1">
-    <widget class="QLabel" name="powerTime">
+    <widget class="QLabel" name="labelRemainingTime">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -107,7 +107,7 @@
     </widget>
    </item>
    <item row="11" column="0">
-    <widget class="QLabel" name="time">
+    <widget class="QLabel" name="labelRemainingTime_2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -133,7 +133,7 @@
     </widget>
    </item>
    <item row="9" column="0">
-    <widget class="QLabel" name="type">
+    <widget class="QLabel" name="labelBatteryType_2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -146,7 +146,7 @@
     </widget>
    </item>
    <item row="0" column="1">
-    <widget class="QLabel" name="powerSource">
+    <widget class="QLabel" name="labelPowerSource">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -178,7 +178,7 @@
     </widget>
    </item>
    <item row="14" column="0">
-    <widget class="QPushButton" name="sleepButton">
+    <widget class="QPushButton" name="pushButtonSleep">
      <property name="text">
       <string>Спящий режим</string>
      </property>
@@ -214,7 +214,7 @@
     </widget>
    </item>
    <item row="5" column="1">
-    <widget class="QLabel" name="powerMode">
+    <widget class="QLabel" name="labelPowerMode">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -230,7 +230,7 @@
     </widget>
    </item>
    <item row="9" column="1">
-    <widget class="QLabel" name="powerType">
+    <widget class="QLabel" name="labelBatteryType">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -246,7 +246,7 @@
     </widget>
    </item>
    <item row="2" column="0">
-    <widget class="QLabel" name="state">
+    <widget class="QLabel" name="labelPowerState_2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -259,7 +259,7 @@
     </widget>
    </item>
    <item row="5" column="0">
-    <widget class="QLabel" name="mode">
+    <widget class="QLabel" name="labelPowerMode_2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -272,7 +272,7 @@
     </widget>
    </item>
    <item row="14" column="1">
-    <widget class="QPushButton" name="hibernatateButton">
+    <widget class="QPushButton" name="pushButtonHibernate">
      <property name="text">
       <string>Гибернация</string>
      </property>
@@ -308,7 +308,7 @@
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="QLabel" name="powerState">
+    <widget class="QLabel" name="labelPowerState">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
