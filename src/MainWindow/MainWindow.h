@@ -18,8 +18,10 @@ public slots:
     void chooseWindow() const;
 
 private:
+    void initMovie();
     Ui::MainWindow *ui;
     BatteryInfo *batteryInfo;
+    QMovie *movie;
 };
 
 #endif //MAINWINDOW_H
