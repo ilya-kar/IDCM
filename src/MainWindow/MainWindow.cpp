@@ -3,11 +3,21 @@
 #include "BatteryInfo.h"
 #include "MainWindow.h"
 
-MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
-    ui = new Ui::MainWindow;
+#include <iostream>
+
+#include "PciInfo.h"
+
+MainWindow::MainWindow(QWidget *parent) : QWidget(parent), ui(new Ui::MainWindow) {
     batteryInfo = new BatteryInfo(this);
+    pciInfo = new PciInfo(this);
+    movie = new QMovie(":/images/tom.gif", QByteArray(), this);
+
     ui->setupUi(this);
-    initMovie();
+    setFixedSize(size());
+    movie->setCacheMode(QMovie::CacheAll);
+    ui->labelMovie->setMovie(movie);
+    movie->start();
+
     connect(ui->pushButtonStart, &QPushButton::clicked, this, &MainWindow::chooseWindow);
 }
 
@@ -21,15 +31,11 @@ void MainWindow::chooseWindow() const {
         case 0:
             batteryInfo->exec();
             break;
+        case 1:
+            pciInfo->exec();
+            break;
         default:
             break;
     }
     movie->setPaused(false);
-}
-
-void MainWindow::initMovie() {
-    movie = new QMovie(":/images/tom.gif", QByteArray(), this);
-    movie->setCacheMode(QMovie::CacheAll);
-    ui->labelMovie->setMovie(movie);
-    movie->start();
 }

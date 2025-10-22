@@ -11,9 +11,12 @@
 const QString BatteryInfo::INITIAL_LINE = "Чтение...";
 
 BatteryInfo::BatteryInfo(QWidget *parent) : QDialog(parent), ui(new Ui::BatteryInfo) {
-    ui->setupUi(this);
     timer = new QTimer(this);
+
+    ui->setupUi(this);
     timer->setInterval(1000);
+    setFixedSize(size());
+
     connect(timer, &QTimer::timeout, this, &BatteryInfo::updateBatteryInfo);
     connect(ui->pushButtonSleep, &QPushButton::clicked, this, [this] {
         goSleep();

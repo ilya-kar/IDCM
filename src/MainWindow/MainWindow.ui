@@ -10,18 +10,6 @@
     <height>309</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>550</width>
-    <height>309</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>550</width>
-    <height>309</height>
-   </size>
-  </property>
   <property name="windowTitle">
    <string>ИиУВМ</string>
   </property>
@@ -67,6 +55,11 @@
      <item>
       <property name="text">
        <string>Лабораторная №1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Лабораторная №2</string>
       </property>
      </item>
     </widget>

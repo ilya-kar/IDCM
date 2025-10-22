@@ -15,20 +15,14 @@ find_package(Qt6 COMPONENTS REQUIRED
 
 add_subdirectory(src/MainWindow)
 add_subdirectory(src/BatteryInfo)
+add_subdirectory(src/PciInfo)
 
 add_executable(myapp src/main.cpp resources/resources.qrc)
 target_link_libraries(myapp PRIVATE MainWindow)
 
-set(DEBUG_SUFFIX)
-if (MSVC AND CMAKE_BUILD_TYPE MATCHES "Debug")
-    set(DEBUG_SUFFIX "d")
-endif ()
-
-if (NOT CMAKE_BUILD_TYPE MATCHES "Debug")
-    set_target_properties(myapp PROPERTIES WIN32_EXECUTABLE TRUE)
-endif ()
-
 if (CMAKE_BUILD_TYPE MATCHES "Release")
+    set_target_properties(myapp PROPERTIES WIN32_EXECUTABLE TRUE)
+
     set(QT_INSTALL_PATH "${CMAKE_PREFIX_PATH}")
     if (NOT EXISTS "${QT_INSTALL_PATH}/bin")
         set(QT_INSTALL_PATH "${QT_INSTALL_PATH}/..")
@@ -38,9 +32,9 @@ if (CMAKE_BUILD_TYPE MATCHES "Release")
     endif ()
 
     set(QT_PLUGINS
-            "platforms\;qwindows${DEBUG_SUFFIX}.dll"
-            "styles\;qmodernwindowsstyle${DEBUG_SUFFIX}.dll"
-            "imageformats\;qjpeg${DEBUG_SUFFIX}.dll"
+            "platforms\;qwindows.dll"
+            "styles\;qmodernwindowsstyle$.dll"
+            "imageformats\;qjpeg$.dll"
     )
 
     foreach(PLUGIN ${QT_PLUGINS})
@@ -64,7 +58,7 @@ if (CMAKE_BUILD_TYPE MATCHES "Release")
     foreach (QT_LIB Core Gui Widgets)
         add_custom_command(TARGET myapp POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E copy_if_different
-                "${QT_INSTALL_PATH}/bin/Qt6${QT_LIB}${DEBUG_SUFFIX}.dll"
+                "${QT_INSTALL_PATH}/bin/Qt6${QT_LIB}.dll"
                 "$<TARGET_FILE_DIR:myapp>")
     endforeach (QT_LIB)
 endif ()

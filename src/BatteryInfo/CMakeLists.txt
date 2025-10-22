@@ -1,5 +1,3 @@
-set(TARGET_NAME "BatteryInfo")
-
 add_library(BatteryInfo STATIC
         BatteryInfo.cpp
         BatteryInfo.h

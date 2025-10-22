@@ -1,0 +1,11 @@
+name,deviceid,vendorid
+PIIX4/4E/4M IDE Controller,0x7111,0x8086
+PIIX4/4E/4M Power Management Controller,0x7113,0x8086
+Gigabit Ethernet Controller (Copper),0x1004,0x8086
+PCI & Memory Controller,0x1237,0x8086
+VirtualBox Guest Service,0xCAFE,0x80EE
+VirtualBox Graphics Adapter,0xBEEF,0x80EE
+Aureal (AD1881 SOUNDMAX),0x2415,0x8086
+PIIX3 PCI-to-ISA Bridge (Triton II),0x7000,0x8086
+KeyLargo/Intrepid USB,0x003F,0x106B
+USB 2.0 EHCI Controller,0x265C,0x8086

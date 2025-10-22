@@ -1,5 +1,19 @@
 <RCC>
     <qresource prefix="/">
         <file>images/tom.gif</file>
+        <file>sprites/stay1.png</file>
+        <file>sprites/stay2.png</file>
+        <file>sprites/stay3.png</file>
+        <file>sprites/stay4.png</file>
+        <file>sprites/stay5.png</file>
+        <file>sprites/stay6.png</file>
+        <file>sprites/run1.png</file>
+        <file>sprites/run2.png</file>
+        <file>sprites/run3.png</file>
+        <file>sprites/run4.png</file>
+        <file>sprites/run5.png</file>
+        <file>sprites/run6.png</file>
+        <file>sprites/run7.png</file>
+		<file>data/pciinfo.csv</file>
     </qresource>
 </RCC>

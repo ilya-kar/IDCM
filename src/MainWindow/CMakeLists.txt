@@ -1,5 +1,3 @@
-set(TARGET_NAME "MainWindow")
-
 add_library(MainWindow STATIC
         MainWindow.cpp
         MainWindow.h
@@ -7,6 +5,7 @@ add_library(MainWindow STATIC
 
 target_link_libraries(MainWindow PUBLIC
         BatteryInfo
+        PciInfo
 )
 
 target_include_directories(MainWindow PUBLIC

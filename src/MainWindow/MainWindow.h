@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#include "PciInfo.h"
+
 namespace Ui { class MainWindow; }
 
 class BatteryInfo;
@@ -18,9 +20,9 @@ public slots:
     void chooseWindow() const;
 
 private:
-    void initMovie();
     Ui::MainWindow *ui;
     BatteryInfo *batteryInfo;
+    PciInfo *pciInfo;
     QMovie *movie;
 };
 
