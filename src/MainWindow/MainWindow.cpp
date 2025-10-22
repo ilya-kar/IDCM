@@ -2,9 +2,6 @@
 #include "ui_MainWindow.h"
 #include "BatteryInfo.h"
 #include "MainWindow.h"
-
-#include <iostream>
-
 #include "PciInfo.h"
 
 MainWindow::MainWindow(QWidget *parent) : QWidget(parent), ui(new Ui::MainWindow) {

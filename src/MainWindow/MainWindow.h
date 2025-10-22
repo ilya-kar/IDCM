@@ -3,11 +3,10 @@
 
 #include <QWidget>
 
-#include "PciInfo.h"
-
 namespace Ui { class MainWindow; }
 
 class BatteryInfo;
+class PciInfo;
 
 class MainWindow : public QWidget {
     Q_OBJECT
