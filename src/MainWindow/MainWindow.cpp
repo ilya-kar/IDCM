@@ -3,10 +3,12 @@
 #include "BatteryInfo.h"
 #include "MainWindow.h"
 #include "PciInfo.h"
+#include "DiskInfo.h"
 
 MainWindow::MainWindow(QWidget *parent) : QWidget(parent), ui(new Ui::MainWindow) {
     batteryInfo = new BatteryInfo(this);
     pciInfo = new PciInfo(this);
+    diskInfo = new DiskInfo(this);
     movie = new QMovie(":/images/tom.gif", QByteArray(), this);
 
     ui->setupUi(this);
@@ -30,6 +32,9 @@ void MainWindow::chooseWindow() const {
             break;
         case 1:
             pciInfo->exec();
+            break;
+        case 2:
+            diskInfo->exec();
             break;
         default:
             break;

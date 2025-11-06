@@ -13,10 +13,10 @@ public:
     ~PciInfo() override;
     void setDevices();
     void showEvent(QShowEvent *event) override;
-    void closeEvent(QCloseEvent *event) override;
 
 private:
     Ui::PciInfo *ui;
+    bool isDevicesSet = false;
 };
 
 #endif //PCIINFO_H

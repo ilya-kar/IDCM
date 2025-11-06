@@ -1,9 +1,9 @@
-add_library(PciInfo STATIC
-        PciInfo.cpp
-        PciInfo.h
+add_library(DiskInfo STATIC
+        DiskInfo.cpp
+        DiskInfo.h
 )
 
-target_link_libraries(PciInfo
+target_link_libraries(DiskInfo
         PUBLIC
             Qt::Core
             Qt::Gui
@@ -12,6 +12,6 @@ target_link_libraries(PciInfo
             SpriteWidget
 )
 
-target_include_directories(PciInfo PUBLIC
+target_include_directories(DiskInfo PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
 )

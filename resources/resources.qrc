@@ -15,5 +15,6 @@
         <file>sprites/run6.png</file>
         <file>sprites/run7.png</file>
 		<file>data/pciinfo.csv</file>
+        <file>data/diskinfo.csv</file>
     </qresource>
 </RCC>

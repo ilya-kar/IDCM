@@ -33,24 +33,23 @@ void PciInfo::setDevices() {
             ui->tableWidgetDevices->setItem(row, col, new QTableWidgetItem(fields[col]));
         }
     }
+
+    isDevicesSet = true;
 }
 
 void PciInfo::showEvent(QShowEvent *event) {
     QDialog::showEvent(event);
 
-    int width = ui->tableWidgetDevices->viewport()->width();
-    auto header = ui->tableWidgetDevices->horizontalHeader();
+    if (!isDevicesSet) {
+        int width = ui->tableWidgetDevices->viewport()->width();
+        auto header = ui->tableWidgetDevices->horizontalHeader();
 
-    ui->tableWidgetDevices->setColumnWidth(0, static_cast<int>(width * 0.67));
-    ui->tableWidgetDevices->setColumnWidth(1, static_cast<int>(width * 0.15));
-    ui->tableWidgetDevices->setColumnWidth(2, static_cast<int>(width * 0.15));
-    header->setSectionResizeMode(QHeaderView::Fixed);
-    header->setSectionsClickable(false);
+        ui->tableWidgetDevices->setColumnWidth(0, static_cast<int>(width * 0.67));
+        ui->tableWidgetDevices->setColumnWidth(1, static_cast<int>(width * 0.15));
+        ui->tableWidgetDevices->setColumnWidth(2, static_cast<int>(width * 0.15));
+        header->setSectionResizeMode(QHeaderView::Fixed);
+        header->setSectionsClickable(false);
 
-    setDevices();
-}
-
-void PciInfo::closeEvent(QCloseEvent *event) {
-    QDialog::closeEvent(event);
-    ui->tableWidgetDevices->setRowCount(0);
+        setDevices();
+    }
 }

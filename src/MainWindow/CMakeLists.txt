@@ -6,6 +6,7 @@ add_library(MainWindow STATIC
 target_link_libraries(MainWindow PUBLIC
         BatteryInfo
         PciInfo
+        DiskInfo
 )
 
 target_include_directories(MainWindow PUBLIC

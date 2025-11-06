@@ -16,6 +16,8 @@ find_package(Qt6 COMPONENTS REQUIRED
 add_subdirectory(src/MainWindow)
 add_subdirectory(src/BatteryInfo)
 add_subdirectory(src/PciInfo)
+add_subdirectory(src/DiskInfo)
+add_subdirectory(src/Sprite)
 
 add_executable(myapp src/main.cpp resources/resources.qrc)
 target_link_libraries(myapp PRIVATE MainWindow)
