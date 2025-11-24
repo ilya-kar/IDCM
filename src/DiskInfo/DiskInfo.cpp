@@ -50,27 +50,25 @@ void DiskInfo::addPage(QStringList fields) const {
     scroll->setWidgetResizable(true);
     scroll->setFrameShape(QFrame::NoFrame);
 
-    form->addRow("Модель:", new QLabel(fields[0]));
-    form->addRow("Серийный номер:", new QLabel(fields[1]));
-    form->addRow("Версия прошивки:", new QLabel(fields[2]));
-
-    QLabel *size = new QLabel;
-    form->addRow("Размер (ГБ):", size);
-    if (fields[3][0] == '0') size->setText("N/A");
-    else size->setText(fields[3]);
-
+    form->addRow("Производитель:", new QLabel(fields[0]));
+    form->addRow("Модель:", new QLabel(fields[1]));
+    form->addRow("Серийный номер:", new QLabel(fields[2]));
+    form->addRow("Версия прошивки:", new QLabel(fields[3]));
     form->addRow("Тип интерфейса:", new QLabel(fields[4]));
+    form->addRow("Общий размер:", new QLabel(fields[5] + " ГБ"));
+    form->addRow("Свободно:", new QLabel(fields[6] + " ГБ"));
+    form->addRow("Занято:", new QLabel(fields[7] + " ГБ"));
 
-    QString pioList = bitmaskToList(fields[5].toUInt(), 8);
-    QString mwdmaList = bitmaskToList(fields[6].toUInt(), 3);
-    QString umdaList = bitmaskToList(fields[7].toUInt(), 7);
+    QString pioList = bitmaskToList(fields[8].toUInt(), 8);
+    QString mwdmaList = bitmaskToList(fields[9].toUInt(), 3);
+    QString umdaList = bitmaskToList(fields[10].toUInt(), 7);
 
     form->addRow("Поддерживаемые режимы PIO:", new QLabel(pioList));
     form->addRow("Поддерживаемые режимы MWDMA:", new QLabel(mwdmaList));
     form->addRow("Поддерживаемые режимы UMDA:", new QLabel(umdaList));
 
     ui->stackedWidgetDevices->addWidget(scroll);
-    ui->listWidgetDevices->addItem(fields[0]);
+    ui->listWidgetDevices->addItem(fields[0] + " " + fields[1]);
 }
 
 QString DiskInfo::bitmaskToList(quint32 mask, int maxMode) {

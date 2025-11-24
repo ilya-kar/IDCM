@@ -1,4 +1,2 @@
-model,serialnumber,firmware,size,type,pio,mwdma,udma
-VBOX HARDDISK,VB2dfcbaa6-fd3e1a48,1.0,20,ATA,3,7,127
-VBOX HARDDISK,VBa11af471-c7b8196d,1.0,5,ATA,3,7,127
-VBOX CD-ROM,VB2-01700376,1.0,0,ATAPI,3,7,127
+manufacturer,model,serialnumber,firmware,type,fullsize,freesize,usedsize,pio,mwdma,udma
+VBOX,HARDDISK,VB2dfcbaa6-fd3e1a48,1.0,ATA,20,11.466,8.534,3,7,127
