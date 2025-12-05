@@ -16,5 +16,6 @@
         <file>sprites/run7.png</file>
 		<file>data/pciinfo.csv</file>
         <file>data/diskinfo.csv</file>
+        <file>images/camera-not-unavailable.jpg</file>
     </qresource>
 </RCC>

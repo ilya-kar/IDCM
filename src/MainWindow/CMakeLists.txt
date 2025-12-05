@@ -7,6 +7,7 @@ target_link_libraries(MainWindow PUBLIC
         BatteryInfo
         PciInfo
         DiskInfo
+        CameraInfo
 )
 
 target_include_directories(MainWindow PUBLIC

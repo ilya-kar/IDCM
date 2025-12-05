@@ -1,14 +1,16 @@
-#include  <QMovie>
+#include <QMovie>
 #include "ui_MainWindow.h"
 #include "BatteryInfo.h"
 #include "MainWindow.h"
 #include "PciInfo.h"
 #include "DiskInfo.h"
+#include "CameraInfo.h"
 
 MainWindow::MainWindow(QWidget *parent) : QWidget(parent), ui(new Ui::MainWindow) {
     batteryInfo = new BatteryInfo(this);
     pciInfo = new PciInfo(this);
     diskInfo = new DiskInfo(this);
+    cameraInfo = new CameraInfo(this);
     movie = new QMovie(":/images/tom.gif", QByteArray(), this);
 
     ui->setupUi(this);
@@ -35,6 +37,9 @@ void MainWindow::chooseWindow() const {
             break;
         case 2:
             diskInfo->exec();
+            break;
+        case 3:
+            cameraInfo->exec();
             break;
         default:
             break;

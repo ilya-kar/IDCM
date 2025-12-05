@@ -8,6 +8,7 @@ namespace Ui { class MainWindow; }
 class BatteryInfo;
 class PciInfo;
 class DiskInfo;
+class CameraInfo;
 
 class MainWindow : public QWidget {
     Q_OBJECT
@@ -24,6 +25,7 @@ private:
     BatteryInfo *batteryInfo;
     PciInfo *pciInfo;
     DiskInfo *diskInfo;
+    CameraInfo *cameraInfo;
     QMovie *movie;
 };
 

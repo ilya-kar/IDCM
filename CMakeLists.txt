@@ -11,6 +11,8 @@ find_package(Qt6 COMPONENTS REQUIRED
         Core
         Gui
         Widgets
+        Multimedia
+        MultimediaWidgets
 )
 
 add_subdirectory(src/MainWindow)
@@ -18,6 +20,8 @@ add_subdirectory(src/BatteryInfo)
 add_subdirectory(src/PciInfo)
 add_subdirectory(src/DiskInfo)
 add_subdirectory(src/Sprite)
+add_subdirectory(src/CameraInfo)
+add_subdirectory(src/QHotKey)
 
 add_executable(myapp src/main.cpp resources/resources.qrc)
 target_link_libraries(myapp PRIVATE MainWindow)
